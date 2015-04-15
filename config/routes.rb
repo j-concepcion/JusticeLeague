@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :barangays
-
-  resources :cities
-
-  resources :provinces
+  resources :barangays do
+   resources :cities do
+    resources :provinces do
+     resources :users
+    end
+   end
+  end
 
   root 'static_pages#home'
 
@@ -11,7 +13,6 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'static_pages/about'
 
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
