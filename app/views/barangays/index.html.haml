@@ -1,0 +1,21 @@
+%h1 Listing barangays
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @barangays.each do |barangay|
+      %tr
+        %td= barangay.name
+        %td= link_to 'Show', barangay
+        %td= link_to 'Edit', edit_barangay_path(barangay)
+        %td= link_to 'Destroy', barangay, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Barangay', new_barangay_path
