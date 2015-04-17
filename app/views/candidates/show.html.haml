@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @candidate.first_name
+%p
+  %b Middle name:
+  = @candidate.middle_name
+%p
+  %b Last name:
+  = @candidate.last_name
+%p
+  %b Position:
+  = @candidate.position
+%p
+  %b Age:
+  = @candidate.age
+%p
+  %b Agenda:
+  = @candidate.agenda
+%p
+  %b Achievements:
+  = @candidate.achievements
+%p
+  %b Votes rendered:
+  = @candidate.votes_rendered
+
+= link_to 'Edit', edit_candidate_path(@candidate)
+\|
+= link_to 'Back', candidates_path

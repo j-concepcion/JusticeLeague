@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
-  resources :barangays do
+  resources :votes
+
+  resources :candidates
+
+  resources :provinces do
    resources :cities do
-    resources :provinces do
-     resources :users
+    resources :barangays do
     end
    end
   end
 
-  root 'static_pages#home'
+  resources :users
+
+  root 'static_pages#login'
 
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'
+  get 'static_pages/current'
+  get 'static_pages/login'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

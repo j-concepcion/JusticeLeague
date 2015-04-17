@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  position: MyString
+  age: 1
+  agenda: MyString
+  achievements: MyString
+  votes_rendered: 1
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  position: MyString
+  age: 1
+  agenda: MyString
+  achievements: MyString
+  votes_rendered: 1

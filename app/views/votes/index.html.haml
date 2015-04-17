@@ -1,0 +1,21 @@
+%h1 Listing votes
+
+%table
+  %thead
+    %tr
+      %th Candidate
+      %th
+      %th
+      %th
+
+  %tbody
+    - @votes.each do |vote|
+      %tr
+        %td= vote.candidate_id
+        %td= link_to 'Show', vote
+        %td= link_to 'Edit', edit_vote_path(vote)
+        %td= link_to 'Destroy', vote, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vote', new_vote_path
