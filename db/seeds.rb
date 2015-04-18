@@ -15,7 +15,6 @@
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    username: Faker::Internet.user_name,
     password: 'password',
     encrypted_password: 'password',
     date_of_birth: (rand(20..40.years)).ago,
