@@ -12,14 +12,21 @@
 
 1.upto(5) do |i|
   User.create(
+    email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Internet.user_name,
     password: 'password',
+    encrypted_password: 'password',
     date_of_birth: (rand(20..40.years)).ago,
     street_adderss: (Faker::Address.street_address).to_s
     )
 end
+
+##########################################################
+# CANDIDATES
+##########################################################
+
 
 Candidate::POSITIONS.each do |p|
     1.upto(2) do |i|
