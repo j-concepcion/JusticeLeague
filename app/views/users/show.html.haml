@@ -3,9 +3,13 @@
   %h1
    Profile
    = link_to home_path, class: "btn btn-warning btn-xs", "data-toggle" => "tooltip", "data-placement" => "top", title: "Back to Home" do
-    %span.glyphicon.glyphicon-
-
- %table.table.table-striped.table-condensed
+    %span.glyphicon.glyphicon-home
+ 
+.panel.panel-default.bg-transparent
+ %table.table.table-condensed
+  %tr
+   %th Email:
+   %td= @user.email
   %tr
    %th National ID Number:
    %td= @user.national_id_number
@@ -13,8 +17,26 @@
    %th First Name:
    %td= @user.first_name
   %tr
+   %th Middle Name:
+   %td= @user.middle_name
+  %tr
    %th Last Name:
    %td= @user.last_name
   %tr
-   %th Email:
-   %td= @user.email
+   %th Gender
+   %td= @user.gender
+  %tr
+   %th Street Address
+   %td= @user.street_adderss
+  %tr
+   %th Date Of Birth
+   %td= @user.date_of_birth
+  %tr
+   %th Civil Status
+   %td= @user.civil_status
+  %tr
+   %th Profession
+   %td= @user.profession
+  %tr
+   %th Tin Number
+   %td= @user.tin
