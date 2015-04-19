@@ -13,9 +13,10 @@
       = link_to candidate, title: "Show candidate" do
        %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
      .media-body
-      %h3.media-heading= candidate.name
-      %h4= candidate.position
+      %h2.media-heading= candidate.name
+      %h3= candidate.position
       %p= candidate.agenda
+      %h4 Votes Rendered:
       %p= candidate.get_upvotes.size
       %p
        .btn-group.btn-group-xs
