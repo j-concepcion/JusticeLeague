@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 	belongs_to :barangay
 	belongs_to :city
 	belongs_to :province
+
+   validates :first_name, :last_name, :email, presence: true
+   validates :email, uniqueness: true
 end
