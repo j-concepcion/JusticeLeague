@@ -56,6 +56,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     min-height: 700px;
     width: 850px;
     height: auto;
+    border: 1px solid red;
 }
 
 .centered {
@@ -64,6 +65,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     left:50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    border: 1px solid blue;
 }
 
 .bg-solid { background-color: #c1c1c1; }
