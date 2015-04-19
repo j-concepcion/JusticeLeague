@@ -40,7 +40,7 @@ end
 ##########################################################
 
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/batman.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'Bruce',
     middle_name: Faker::Name.last_name,
     last_name: 'Wayne',
@@ -51,7 +51,7 @@ Candidate.create(
     votes_rendered: 15,
     )
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/superman.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'Clark',
     middle_name: Faker::Name.last_name,
     last_name: 'Kent',
@@ -62,7 +62,7 @@ Candidate.create(
     votes_rendered: 5,
     )
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/sherlock.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'Sherlock',
     middle_name: Faker::Name.last_name,
     last_name: 'Holmes',
@@ -73,7 +73,7 @@ Candidate.create(
     votes_rendered: 10,
     )
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/spock.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'S\'chn T\'ga',
     middle_name: Faker::Name.last_name,
     last_name: 'Spock',
@@ -84,7 +84,7 @@ Candidate.create(
     votes_rendered: 10,
     )
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/darth.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'Anakin',
     middle_name: Faker::Name.last_name,
     last_name: 'Skywalker',
@@ -95,7 +95,7 @@ Candidate.create(
     votes_rendered: 3,
     )
 Candidate.create(
-    avatar: "#{Rails.root}/asset/images/mickey.jpg",
+    avatar: Faker::Avatar.image,
     first_name: 'Mickey',
     middle_name: Faker::Name.last_name,
     last_name: 'Mouse',

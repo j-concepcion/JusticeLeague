@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :votes
 
-  resources :candidates
+  resources :candidates do
+    member do
+      put "vote", to: "candidates#upvote"
+    end
+  end
 
   resources :provinces do
    resources :cities do

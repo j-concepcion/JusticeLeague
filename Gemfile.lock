@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (5.1.10)
       execjs
@@ -160,6 +161,7 @@ PLATFORMS
   unknown
 
 DEPENDENCIES
+  acts_as_votable
   bootstrap-datepicker-rails (~> 1.3.0.2)
   bootstrap-sass (~> 3.3.4)
   coffee-rails (~> 4.0.0)
