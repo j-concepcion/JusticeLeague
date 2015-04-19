@@ -1,26 +1,26 @@
-.text-center
-  .col-xs-6.col-xs-offset-1.col-md-6.col-md-offset-3
-    %h1
-      %strong Contribute to the Destiny 
-      %br/
-      %strong Of our country
-    %h3
-      %strong Exercise your right to vote
+.centered
+  %h1
+    %strong Contribute to the Destiny 
     %br/
-    .col-md-6.col-md-offset-3.panel.padding.bg-transparent
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %strong Of our country
+  %br/
+  %h3
+    %strong Exercise your right to vote
+  %br/
+  .col-lg-8.col-md-offset-2.panel.padding.bg-transparent
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true
+      .field
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      - if devise_mapping.rememberable?
         .field
-          = f.label :email
-          %br/
-          = f.email_field :email, autofocus: true
-        .field
-          = f.label :password
-          %br/
-          = f.password_field :password, autocomplete: "off"
-        - if devise_mapping.rememberable?
-          .field
-            = f.check_box :remember_me
-            = f.label :remember_me
-        .actions
-          = f.submit "Log in", class: "btn btn-default"
-      = render "devise/shared/links"
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Log in", class: "btn btn-default"
+    = render "devise/shared/links"

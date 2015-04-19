@@ -16,25 +16,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
-h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans'; }
+body { font-family: 'Open Sans'; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
 
-.content:before {
+.bg-img {
     content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
     z-index: -1;
 
     background-image: url('http://www.clipartbest.com/cliparts/4T9/ezL/4T9ezLaTE.png');
-    background-size: 800px 800px;
+    background-size: 575px 575px;
     background-repeat: no-repeat;
-    background-position: center;    
+    background-position: center center;   
+    border: 1px solid orange;
     
     width: 1200px;
     height: auto;
-    min-width: 800px;
-    min-height: 800px;
+    min-width: 700px;
+    min-height: 700px;
 
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
@@ -44,11 +48,22 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans'; }
 }
 
 .content {
-    position: scroll;
-    margin-top: 20px;
-    left: 0;
-    right: 0;
+    position: absolute;    
+    left:50%;
+    transform: translate(-50%);
     z-index: 0;
+    min-width: 700px;
+    min-height: 700px;
+    width: 850px;
+    height: auto;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 .bg-solid { background-color: #c1c1c1; }
