@@ -24,7 +24,11 @@ class CandidatesController < ApplicationController
 def upvote
   @candidate = Candidate.find(params[:id])
   @candidate.upvote_by current_user
-  redirect_to candidates_path
+
+  respond_to do |format|
+    format.html { redirect_to candidates_path, notice: 'Candidate was successfully voted.' }
+    format.json { render :show, status: :ok, location: @candidate }
+  end
 end
 
   # POST /candidates

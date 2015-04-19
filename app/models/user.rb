@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
 
    validates :first_name, :last_name, :email, presence: true
    validates :email, uniqueness: true
+   validates_presence_of :password, :on => :create  
+   validates_length_of :password, :minimum => 8, :allow_blank => false  
 end
