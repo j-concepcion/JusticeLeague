@@ -1,10 +1,8 @@
-.row
- .col-md-8.col-md-offset-1
-  .jumbotron
-   %h1= "Hello, #{current_user.first_name}!"
-   %p ...
-   %p
-    = link_to candidates_path, class: "btn btn-primary btn-lg", title: "New Order Slip" do
-     %span.glyphicon.glyphicon-list-alt
-     START VOTING!
+.col-md-10.col-md-offset-1
+  %h1.text-center= "Hello, #{current_user.first_name}!"
+  %p ...
+  %p
+  = link_to candidates_path, class: "btn btn-primary btn-lg", title: "New Order Slip" do
+    %span.glyphicon.glyphicon-list-alt
+    START VOTING!
 

@@ -11,9 +11,9 @@
     .bg-img
     %header
       = render 'layouts/navigation'
+    = render 'layouts/messages'
     %main{:role => "main"}
       .content
-        = render 'layouts/messages'
         = yield
 
 = javascript_include_tag :defaults, :cache => true      
