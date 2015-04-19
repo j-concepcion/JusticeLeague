@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Candidate:
+  = @vote_item.candidate_id
+
+= link_to 'Edit', edit_vote_item_path(@vote_item)
+\|
+= link_to 'Back', vote_items_path

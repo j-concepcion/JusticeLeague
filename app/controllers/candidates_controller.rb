@@ -21,6 +21,12 @@ class CandidatesController < ApplicationController
   def edit
   end
 
+def upvote
+  @candidate = Candidate.find(params[:id])
+  @candidate.upvote_by current_user
+  redirect_to candidates_path
+end
+
   # POST /candidates
   # POST /candidates.json
   def create

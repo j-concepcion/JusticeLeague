@@ -4,20 +4,21 @@
    %h1
     Candidates Index
 
-.row
- - @candidates.each do |candidate|
-  .col-md-6
-   .media
-    .media-left.media-top
-     = link_to candidate, title: "Show candidate" do
-      %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
-    .media-body.bg-transparent
-     %h3.media-heading= candidate.name
-     %h4= candidate.position
-     %p= candidate.agenda
-     %p= candidate.votes_rendered
-     %p
-      .btn-group.btn-group-xs
-       = link_to candidate, class: 'btn btn-primary' do
-        %span.glyphicon.glyphicon-plus
-        VOTE 
+- Candidate::POSITIONS.each do |i|
+ .row
+  - @candidates.where(:position=>i).each do |candidate|
+   .col-md-6.bg-transparent
+    .media
+     .media-left.media-top
+      = link_to candidate, title: "Show candidate" do
+       %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
+     .media-body
+      %h3.media-heading= candidate.name
+      %h4= candidate.position
+      %p= candidate.agenda
+      %p= candidate.get_upvotes.size
+      %p
+       .btn-group.btn-group-xs
+        = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
+         %span.glyphicon.glyphicon-plus
+         VOTE
