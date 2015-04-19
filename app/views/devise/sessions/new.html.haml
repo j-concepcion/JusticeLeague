@@ -1,4 +1,4 @@
-.centered{ style: "width: 650px;"}
+.centered
   %h1#logo
     Some Voting System
   %br/
@@ -14,7 +14,7 @@
           = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: "inputfield well"
           %br/
           .actions
-            = f.submit "Log in", class: "btn btn-default inputfield"
+            = f.submit "Log in", class: "btn btn-primary inputfield"
           - if devise_mapping.rememberable?
             .field
               = f.check_box :remember_me

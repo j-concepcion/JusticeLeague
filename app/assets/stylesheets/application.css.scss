@@ -22,9 +22,22 @@
 body { font-family: 'Open Sans'; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
 
+.navbar-inverse {
+    background-color: #A0B9FF;
+    border-color: #5481FF;
+    font-family: 'Istok Web';
+}
+
+.navbar-inverse .navbar-brand { color: #2A407F; }
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus { color: #4367CC; }
+.navbar-inverse .navbar-nav > li > a { color: #2A407F; }
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus { color: #4367CC; }
+
 .bg-img {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
@@ -54,7 +67,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     transform: translate(-50%);
     z-index: 0;
     min-width: 700px;
-    min-height: 700px;
+    min-height: 600px;
     width: 850px;
     height: auto;
     margin-top: 75px;
@@ -73,6 +86,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
+    min-width: 650px;
     text-align: center;
     border: 1px solid blue;
 }
@@ -102,7 +116,6 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     padding: 15px; 
     border: 1px solid #bbb;
 }
-
 .panel-heading { 
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
@@ -114,4 +127,12 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
 
 .media-top img {
     width: 150px;
+}
+.alert {
+    z-index: 9999;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+    margin-top: 75px;
+    min-width: 600px;
 }
