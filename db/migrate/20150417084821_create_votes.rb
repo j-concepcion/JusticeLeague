@@ -1,6 +1,6 @@
 class CreateVotes < ActiveRecord::Migration
   def change
-    create_table :votes, id: :uuid, default: "uuid_generate_v1()"  do |t|
+    create_table :votes do |t|
       t.uuid :candidate_id
 
       t.timestamps

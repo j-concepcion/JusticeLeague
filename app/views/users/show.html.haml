@@ -1,10 +1,20 @@
-%p#notice= notice
-%p
-  %strong email:
-  = @user.email
-%p
-  %strong Password:
-  = @user.password
-= link_to 'Edit', edit_user_path(@user)
-|
-= link_to 'Back', users_path
+.row
+ .col-md-12
+  %h1
+   Profile
+   = link_to home_path, class: "btn btn-warning btn-xs", "data-toggle" => "tooltip", "data-placement" => "top", title: "Back to Home" do
+    %span.glyphicon.glyphicon-
+
+ %table.table.table-striped.table-condensed
+  %tr
+   %th National ID Number:
+   %td= @user.national_id_number
+  %tr
+   %th First Name:
+   %td= @user.first_name
+  %tr
+   %th Last Name:
+   %td= @user.last_name
+  %tr
+   %th Email:
+   %td= @user.email

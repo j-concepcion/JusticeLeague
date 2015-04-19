@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'faker', group: [:development, :test]
 
+gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
+
 gem 'devise'
 gem 'simple_form'
 gem 'nested_form'

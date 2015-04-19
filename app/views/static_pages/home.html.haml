@@ -4,5 +4,7 @@
    %h1= "Hello, #{current_user.first_name}!"
    %p ...
    %p
-   %a.btn.btn-primary.btn-lg{role: "button"} Start Voting!, votes_path
+    = link_to new_vote_path, class: "btn btn-primary btn-lg", title: "New Order Slip" do
+     %span.glyphicon.glyphicon-list-alt
+     START VOTING!
 
