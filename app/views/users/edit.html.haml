@@ -4,8 +4,6 @@
       Editing user
       = link_to @user, class: "btn btn-warning btn-xs", "data-toggle" => "tooltip", "data-placement" => "top", title: "Discard changes" do
         %span.glyphicon.glyphicon-refresh
-      = link_to users_path, class: "btn btn-default btn-xs", "data-toggle" => "tooltip", "data-placement" => "top", title: "Users index" do
-        %span.glyphicon.glyphicon-list
 .row
   .col-md-12
     = render 'form'

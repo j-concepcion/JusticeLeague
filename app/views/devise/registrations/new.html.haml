@@ -7,7 +7,7 @@
     %h3
       %strong Exercise your right to vote
     %br/
-    .col-md-6.col-md-offset-3.panel.padding.bg-transparent
+    .col-md-10.col-md-offset-2.panel.padding.bg-transparent
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         %h2 Sign up
         .field
@@ -25,6 +25,12 @@
           = f.label :password_confirmation
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
+          %hr
+          .field
+          = f.label :national_id_number
+          %br/
+          = f.password_field :national_id_number
+
         .actions
           = f.submit "Sign up"
       = render "devise/shared/links"

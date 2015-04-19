@@ -1,6 +1,6 @@
 class CreateCandidates < ActiveRecord::Migration
   def change
-    create_table :candidates, id: :uuid, default: "uuid_generate_v1()"  do |t|
+    create_table :candidates do |t|
       t.string :first_name
       t.string :middle_name
       t.string :last_name

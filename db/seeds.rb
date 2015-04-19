@@ -9,16 +9,27 @@
 ##########################################################
 # USERS
 ##########################################################
+User.find_or_create_by!(
+    avatar: Faker::Avatar.image,
+    email: "flash@base.com",
+    first_name: "Barry",
+    last_name: "Allen",
+    password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
+    encrypted_password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
+    password_confirmation: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
+    date_of_birth: (rand(20..40.years)).ago,
+    street_adderss: (Faker::Address.street_address).to_s
+    )
 
 1.upto(19) do |i|
-  User.create(
+ User.find_or_create_by!(
     avatar: Faker::Avatar.image,
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    password: 'password',
-    password_confirmation: 'password',
-    encrypted_password: 'password',
+    password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
+    encrypted_password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
+    password_confirmation: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
     date_of_birth: (rand(20..40.years)).ago,
     street_adderss: (Faker::Address.street_address).to_s
     )

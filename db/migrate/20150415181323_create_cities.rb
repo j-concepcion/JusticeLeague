@@ -1,6 +1,6 @@
 class CreateCities < ActiveRecord::Migration
   def change
-    create_table :cities, id: :uuid, default: "uuid_generate_v1()"  do |t|
+    create_table :cities do |t|
       t.string :name
 
       t.timestamps
