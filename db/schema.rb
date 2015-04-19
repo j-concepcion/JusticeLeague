@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418041635) do
+ActiveRecord::Schema.define(version: 20150418114146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
 
-  create_table "barangays", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "barangays", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150418041635) do
     t.uuid     "user_id"
   end
 
-  create_table "candidates", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "candidates", force: true do |t|
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
@@ -37,9 +36,10 @@ ActiveRecord::Schema.define(version: 20150418041635) do
     t.integer  "votes_rendered"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
-  create_table "cities", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "cities", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150418041635) do
     t.uuid     "user_id"
   end
 
-  create_table "provinces", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "provinces", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,12 +57,13 @@ ActiveRecord::Schema.define(version: 20150418041635) do
     t.uuid     "user_id"
   end
 
-  create_table "users", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "national_id_number"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
     t.string   "password"
+    t.string   "password_confirmation"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gender"
@@ -99,12 +100,13 @@ ActiveRecord::Schema.define(version: 20150418041635) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "votes", id: :uuid, default: "uuid_generate_v1()", force: true do |t|
+  create_table "votes", force: true do |t|
     t.uuid     "candidate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
