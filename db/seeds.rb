@@ -23,6 +23,7 @@ User.find_or_create_by!(
 
 1.upto(19) do |i|
  User.find_or_create_by!(
+    national_id_number: Faker::Business.credit_card_number,
     avatar: Faker::Avatar.image,
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
@@ -31,7 +32,12 @@ User.find_or_create_by!(
     encrypted_password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
     password_confirmation: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
     date_of_birth: (rand(20..40.years)).ago,
-    street_adderss: (Faker::Address.street_address).to_s
+    street_adderss: (Faker::Address.street_address).to_s,
+    place_of_birth: (Faker::Address.city).to_s,
+    first_name_father: Faker::Name.first_name,
+    last_name_father: Faker::Name.last_name,
+    first_name_mother: Faker::Name.first_name,
+    last_name_mother: Faker::Name.last_name
     )
 end
 
