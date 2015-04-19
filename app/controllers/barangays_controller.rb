@@ -1,6 +1,6 @@
 class BarangaysController < ApplicationController
   before_action :set_barangay, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /barangays
   # GET /barangays.json
   def index

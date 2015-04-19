@@ -1,4 +1,4 @@
-= form_for(@user) do |f|
+= simple_form_for @user, html:{class: 'form-horizontal', role: 'form'} do |f|
   - if @user.errors.any?
     #error_explanation
       %h2
@@ -6,14 +6,14 @@
         prohibited this user from being saved:
       %ul
         - @user.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :email
-    %br/
-    = f.text_field :email
-  .field
-    = f.label :password
-    %br/
-    = f.text_field :password
-  .actions
-    = f.submit
+          %li= message 
+  = f.input :national_id_number          
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :date_of_birth, as: :string, input_html: { 'data-provide' => 'datepicker'}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit

@@ -1,12 +1,21 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Justiceleague
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Justice League'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Justcice League'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     .bg-img
     .content
-      = yield
+      %header
+        = render 'layouts/navigation'
+      %main{:role => "main"}
+        = render 'layouts/messages'
+        .row
+          .col-md-12
+            = yield
+
+= javascript_include_tag :defaults, :cache => true      

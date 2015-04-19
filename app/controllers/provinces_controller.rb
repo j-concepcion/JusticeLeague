@@ -1,6 +1,7 @@
 class ProvincesController < ApplicationController
+  before_filter :authenticate_user!
+  
   before_action :set_province, only: [:show, :edit, :update, :destroy]
-
   # GET /provinces
   # GET /provinces.json
   def index

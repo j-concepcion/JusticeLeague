@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /candidates
   # GET /candidates.json
   def index
@@ -69,6 +69,6 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:first_name, :middle_name, :last_name, :position, :age, :agenda, :achievements, :votes_rendered)
+      params.require(:candidate).permit(:avatar, :first_name, :middle_name, :last_name, :position, :age, :agenda, :achievements, :votes_rendered)
     end
 end
