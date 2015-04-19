@@ -4,22 +4,65 @@
    %h1
     Candidates Index
 
-- Candidate::POSITIONS.each do |i|
- .row
-  - @candidates.where(:position=>i).each do |candidate|
-   .col-md-6.bg-transparent
-    .media
-     .media-left.media-top
-      = link_to candidate, title: "Show candidate" do
-       %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
-     .media-body
-      %h2.media-heading= candidate.name
-      %h3= candidate.position
-      %p= candidate.agenda
-      %h4 Votes Rendered:
-      %p= candidate.get_upvotes.size
-      %p
-       .btn-group.btn-group-xs
-        = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
-         %span.glyphicon.glyphicon-plus
-         VOTE
+  .panel.panel-default
+   .panel-heading Running For President
+   .panel-body.bg-transparent
+    - @candidates.where(:position=>"President").each do |candidate|
+     .col-md-6
+      .media
+       .media-left.media-top
+        = link_to candidate, title: "Show candidate" do
+         %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
+       .media-body
+        %h2.media-heading= candidate.name
+        %h3= candidate.position
+        %p= candidate.agenda
+        %h4 Votes Rendered:
+        %p= candidate.get_upvotes.size
+        %p
+         .btn-group.btn-group-xs
+          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
+           %span.glyphicon.glyphicon-plus
+           VOTE
+
+   .panel.panel-default
+   .panel-heading Running For Vice President
+   .panel-body.bg-transparent
+    - @candidates.where(:position=>"Vice President").each do |candidate|
+     .col-md-6
+      .media
+       .media-left.media-top
+        = link_to candidate, title: "Show candidate" do
+         %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
+       .media-body
+        %h2.media-heading= candidate.name
+        %h3= candidate.position
+        %p= candidate.agenda
+        %h4 Votes Rendered:
+        %p= candidate.get_upvotes.size
+        %p
+         .btn-group.btn-group-xs
+          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
+           %span.glyphicon.glyphicon-plus
+           VOTE 
+
+  .panel.panel-default
+   .panel-heading Running For Senator
+   .panel-body.bg-transparent
+    - @candidates.where(:position=>"Senator").each do |candidate|
+     .col-md-6
+      .media
+       .media-left.media-top
+        = link_to candidate, title: "Show candidate" do
+         %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
+       .media-body
+        %h2.media-heading= candidate.name
+        %h3= candidate.position
+        %p= candidate.agenda
+        %h4 Votes Rendered:
+        %p= candidate.get_upvotes.size
+        %p
+         .btn-group.btn-group-xs
+          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
+           %span.glyphicon.glyphicon-plus
+           VOTE                    
