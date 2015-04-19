@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  resources :users
+  authenticated :user do
+    root :to => 'static_pages#home', :as => :authenticated_root
+  end
+  
+
+
   resources :votes
 
   resources :candidates
@@ -11,13 +19,11 @@ Rails.application.routes.draw do
    end
   end
 
+  root to: 'static_pages#current'
 
-  root 'static_pages#home'
 
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
-
+  match 'home' => 'static_pages#home', :via => [:get]
+  match 'current' => 'static_pages#current', :via => [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

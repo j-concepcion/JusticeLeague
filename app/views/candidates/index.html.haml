@@ -1,35 +1,23 @@
-%h1 Listing candidates
+.row
+ .col-md-12
+  .page-header
+   %h1
+    Candidates Index
 
-%table
-  %thead
-    %tr
-      %th First name
-      %th Middle name
-      %th Last name
-      %th Position
-      %th Age
-      %th Agenda
-      %th Achievements
-      %th Votes rendered
-      %th
-      %th
-      %th
-
-  %tbody
-    - @candidates.each do |candidate|
-      %tr
-        %td= candidate.first_name
-        %td= candidate.middle_name
-        %td= candidate.last_name
-        %td= candidate.position
-        %td= candidate.age
-        %td= candidate.agenda
-        %td= candidate.achievements
-        %td= candidate.votes_rendered
-        %td= link_to 'Show', candidate
-        %td= link_to 'Edit', edit_candidate_path(candidate)
-        %td= link_to 'Destroy', candidate, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Candidate', new_candidate_path
+.row
+ - @candidates.each do |candidate|
+  .col-md-6
+   .media
+    .media-left.media-top
+     = link_to candidate, title: "Show candidate" do
+      %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'}
+    .media-body.bg-transparent
+     %h3.media-heading= candidate.name
+     %h4= candidate.position
+     %p= candidate.agenda
+     %p= candidate.votes_rendered
+     %p
+      .btn-group.btn-group-xs
+       = link_to candidate, class: 'btn btn-primary' do
+        %span.glyphicon.glyphicon-plus
+        VOTE 

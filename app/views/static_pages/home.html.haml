@@ -1,12 +1,8 @@
+.row
+ .col-md-8.col-md-offset-1
+  .jumbotron
+   %h1= "Hello, #{current_user.first_name}!"
+   %p ...
+   %p
+   %a.btn.btn-primary.btn-lg{role: "button"} Start Voting!, votes_path
 
-= link_to "Candidates", :candidates
-= link_to "Vote", :new_vote
-
-
-
-%h1 START VOTING!
-
-
-
-%h4 StaticPages#home
-%p Find me in app/views/static_pages/home.html.erb
