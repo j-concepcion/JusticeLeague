@@ -17,6 +17,7 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
 
 body { font-family: 'Open Sans'; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
@@ -60,6 +61,13 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     border: 1px solid red;
 }
 
+#logo {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    font-size: 225%;
+    text-align: center;
+}
+    
 .centered {
     position: absolute;
     top: 50%;
@@ -69,13 +77,40 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
     border: 1px solid blue;
 }
 
+.inputfield, .panel-body { margin: 0px; }
+.inputfield { width: 300px; }
+
+#user_email.inputfield { 
+    border-bottom-left-radius: 0px; 
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+#user_password.inputfield { 
+    border-top-left-radius: 0px; 
+    border-top-right-radius: 0px; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+.actions { padding: 15px; }
+.panel { background-color: rgba(255, 255, 255, 0); }
+
 .bg-solid { background-color: #c1c1c1; }
 .bg-transparent {  background-color: rgba(235, 235, 235, 0.75); }
 
-.padding { 
+.panel-heading, .panel-body, .padding { 
     padding: 15px; 
     border: 1px solid #bbb;
 }
+
+.panel-heading { 
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+    border-bottom: none; }
+.panel-body {
+    background-color: #d4d4d4;
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px; }
 
 .media-top img {
     width: 200px;

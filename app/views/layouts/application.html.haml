@@ -12,8 +12,8 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
       .content
+        = render 'layouts/messages'
         = yield
 
 = javascript_include_tag :defaults, :cache => true      
