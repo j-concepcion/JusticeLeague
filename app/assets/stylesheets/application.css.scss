@@ -109,19 +109,18 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa'; }
 .actions { padding: 15px; }
 .panel { background-color: rgba(255, 255, 255, 0); }
 
-.bg-solid { background-color: #c1c1c1; }
+.bg-solid { background-color: #a8a8a8; }
 .bg-transparent {  background-color: rgba(235, 235, 235, 0.75); }
 
 .panel-heading, .panel-body, .padding { 
     padding: 15px; 
-    border: 1px solid #bbb;
 }
 .panel-heading { 
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
     border-bottom: none; }
 .panel-body {
-    background-color: #d4d4d4;
+    background-color: rgba(212, 212, 212, 0.87);
     border-bottom-left-radius: 15px; 
     border-bottom-right-radius: 15px; }
 
