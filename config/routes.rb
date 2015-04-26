@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :votes
+
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources :users
@@ -7,12 +9,9 @@ Rails.application.routes.draw do
   end
   
 
-
-  resources :votes
-
   resources :candidates do
     member do
-      put "vote", to: "candidates#upvote"
+      post "upvotes"
     end
   end
 

@@ -21,16 +21,6 @@ class CandidatesController < ApplicationController
   def edit
   end
 
-def upvote
-  @candidate = Candidate.find(params[:id])
-  @candidate.upvote_by current_user
-
-  respond_to do |format|
-    format.html { redirect_to candidates_path, notice: 'Candidate was successfully voted.' }
-    format.json { render :show, status: :ok, location: @candidate }
-  end
-end
-
   # POST /candidates
   # POST /candidates.json
   def create
@@ -71,6 +61,18 @@ end
     end
   end
 
+  def upvotes
+    @candidate = Candidate.find(params[:id])
+    @candidate.votes.create
+    @vote = Vote.find_by_candidate_id(@candidate.id)
+    @candidate.update_attribute(:voted_by, params[:user_id])   
+    @vote.update_attribute(:user_id, params[:user_id])
+    respond_to do |format|
+      format.html { redirect_to candidates_path, notice: 'Candidate was successfully voted.' }
+      format.json { render :show, status: :ok, location: @candidate }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidate
@@ -79,6 +81,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:avatar, :first_name, :middle_name, :last_name, :position, :age, :agenda, :achievements, :votes_rendered)
+      params.require(:candidate).permit(:avatar, :first_name, :middle_name, :last_name, :position, :age, :agenda, :achievements, :votes_rendered, :voted_by)
     end
 end

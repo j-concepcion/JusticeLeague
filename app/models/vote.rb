@@ -1,4 +1,3 @@
 class Vote < ActiveRecord::Base
-	belongs_to :user
-	has_many :candidates
+	belongs_to :candidate
 end

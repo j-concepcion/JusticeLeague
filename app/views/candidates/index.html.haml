@@ -18,12 +18,17 @@
         %h3= candidate.position
         %p= candidate.agenda
         %h4 Votes Rendered:
-        %p= candidate.get_upvotes.size
-        %p
-         .btn-group.btn-group-xs
-          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
-           %span.glyphicon.glyphicon-plus
-           VOTE
+        %p= pluralize(candidate.votes.count, "vote")
+        - if (candidate.voted_by == current_user.id)
+         %h6 You have voted for this person.
+        - elsif (candidate.position == "President")
+         %h6
+        -else
+         %p
+          .btn-group.btn-group-xs
+           = link_to  upvotes_candidate_path(candidate, :user_id=>current_user.id), class: 'btn btn-primary', method: :post do
+            %span.glyphicon.glyphicon-plus
+            VOTE
 
    .panel.panel-default
    .panel-heading Running For Vice President
@@ -39,12 +44,17 @@
         %h3= candidate.position
         %p= candidate.agenda
         %h4 Votes Rendered:
-        %p= candidate.get_upvotes.size
-        %p
-         .btn-group.btn-group-xs
-          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
-           %span.glyphicon.glyphicon-plus
-           VOTE 
+        %p= pluralize(candidate.votes.count, "vote")
+        - if (candidate.voted_by == current_user.id)
+         %h6 You have voted for this person.
+        - elsif (candidate.position == "Vice President")
+         %h6
+        -else
+         %p
+          .btn-group.btn-group-xs
+           = link_to  upvotes_candidate_path(candidate, :user_id=>current_user.id), class: 'btn btn-primary', method: :post do
+            %span.glyphicon.glyphicon-plus
+            VOTE
 
   .panel.panel-default
    .panel-heading Running For Senator
@@ -60,9 +70,14 @@
         %h3= candidate.position
         %p= candidate.agenda
         %h4 Votes Rendered:
-        %p= candidate.get_upvotes.size
-        %p
-         .btn-group.btn-group-xs
-          = link_to vote_candidate_path(candidate), class: 'btn btn-primary', method: :put do
-           %span.glyphicon.glyphicon-plus
-           VOTE                    
+        %p= pluralize(candidate.votes.count, "vote")
+        - if (candidate.voted_by == current_user.id)
+         %h6 You have voted for this person.
+        - elsif (candidate.position == "Senator")
+         %h6
+        -else
+         %p
+          .btn-group.btn-group-xs
+           = link_to  upvotes_candidate_path(candidate, :user_id=>current_user.id), class: 'btn btn-primary', method: :post do
+            %span.glyphicon.glyphicon-plus
+            VOTE

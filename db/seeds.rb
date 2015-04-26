@@ -10,6 +10,7 @@
 # USERS
 ##########################################################
 User.find_or_create_by!(
+    national_id_number: Faker::Business.credit_card_number,
     avatar: Faker::Avatar.image,
     email: "flash@base.com",
     first_name: "Barry",
@@ -25,7 +26,7 @@ User.find_or_create_by!(
  User.find_or_create_by!(
     national_id_number: Faker::Business.credit_card_number,
     avatar: Faker::Avatar.image,
-    email: Faker::Internet.email,
+    email: "user#{i}@base.com",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",

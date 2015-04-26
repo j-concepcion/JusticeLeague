@@ -1,6 +1,7 @@
 class Candidate < ActiveRecord::Base
-	acts_as_votable
+
 	POSITIONS = ["President", "Vice President", "Senator"] 
+	has_many :votes, dependent: :destroy
 	def name
 	 [first_name, last_name].join(' ')
 	end
