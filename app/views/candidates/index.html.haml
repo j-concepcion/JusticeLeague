@@ -21,7 +21,7 @@
         %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
          %h6 You have voted for this person.
-        - elsif (candidate.position == "President")
+        - elsif ((Candidate.where(:position => "President" , :voted_by => current_user.id)).count!=0)
          %h6
         -else
          %p
@@ -47,7 +47,7 @@
         %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
          %h6 You have voted for this person.
-        - elsif (candidate.position == "Vice President")
+        - elsif ((Candidate.where(:position => "Vice President" , :voted_by => current_user.id)).count!=0)
          %h6
         -else
          %p
@@ -73,7 +73,7 @@
         %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
          %h6 You have voted for this person.
-        - elsif (candidate.position == "Senator")
+        - elsif ((Candidate.where(:position => "Senator" , :voted_by => current_user.id)).count!=0)
          %h6
         -else
          %p
