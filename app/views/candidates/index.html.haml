@@ -17,10 +17,11 @@
         %h2.media-heading= candidate.name
         %h3= candidate.position
         %p= candidate.agenda
-        %h4 Votes Rendered:
-        %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
-         %h6 You have voted for this person.
+         %h6
+          .btn.btn-success.btn-group-xs
+           %span.glyphicon.glyphicon-ok
+           VOTED
         - elsif ((Candidate.where(:position => "President" , :voted_by => current_user.id)).count!=0)
          %h6
         -else
@@ -43,10 +44,11 @@
         %h2.media-heading= candidate.name
         %h3= candidate.position
         %p= candidate.agenda
-        %h4 Votes Rendered:
-        %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
-         %h6 You have voted for this person.
+         %h6
+          .btn.btn-success.btn-group-xs
+           %span.glyphicon.glyphicon-ok
+           VOTED
         - elsif ((Candidate.where(:position => "Vice President" , :voted_by => current_user.id)).count!=0)
          %h6
         -else
@@ -69,10 +71,11 @@
         %h2.media-heading= candidate.name
         %h3= candidate.position
         %p= candidate.agenda
-        %h4 Votes Rendered:
-        %p= pluralize(candidate.votes.count, "vote")
         - if (candidate.voted_by == current_user.id)
-         %h6 You have voted for this person.
+         %h6
+          .btn.btn-success.btn-group-xs
+           %span.glyphicon.glyphicon-ok
+           VOTED
         - elsif ((Candidate.where(:position => "Senator" , :voted_by => current_user.id)).count!=0)
          %h6
         -else

@@ -1,2 +1,75 @@
 .row
- .col-md-8.col-md-offset-1
+ .col-md-12
+  .page-header
+   %h1
+    Current Standing
+
+  .panel.panel-default
+   .panel-heading For President
+   .panel-body.bg-transparent
+    %table.table.table-condensed.table-hover
+     %tr
+      %th Standing
+      %th
+      %th First Name
+      %th Last Name
+      %th Agenda
+      %th Achievements
+
+     - Candidate.where(:position=>"President").each do |candidate|
+      %tr
+       %td= candidate.votes.count.to_s + "/" + Vote.all.count.to_s
+       %td
+        %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'} 
+       %td= candidate.first_name
+       %td= candidate.last_name
+       %td= candidate.agenda
+       %td= candidate.achievements
+
+  .panel.panel-default
+   .panel-heading For Vice President
+   .panel-body.bg-transparent
+    %table.table.table-condensed.table-hover
+     %tr
+      %th Standing
+      %th
+      %th First Name
+      %th Last Name
+      %th Agenda
+      %th Achievements
+      %th Status
+      %th
+
+     - Candidate.where(:position=>"Vice President").each do |candidate|
+      %tr
+       %td= candidate.votes.count.to_s + "/" + Vote.all.count.to_s
+       %td
+        %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'} 
+       %td= candidate.first_name
+       %td= candidate.last_name
+       %td= candidate.agenda
+       %td= candidate.achievements
+
+  .panel.panel-default
+   .panel-heading For Sentor
+   .panel-body.bg-transparent
+    %table.table.table-condensed.table-hover
+     %tr
+      %th Standing
+      %th
+      %th First Name
+      %th Last Name
+      %th Agenda
+      %th Achievements
+      %th Status
+      %th
+
+     - Candidate.where(:position=>"Senator").each do |candidate|
+      %tr
+       %td= candidate.votes.count.to_s + "/" + Vote.all.count.to_s
+       %td
+        %img{:class => 'media-object', :src => candidate.avatar, :alt => 'candidate image'} 
+       %td= candidate.first_name
+       %td= candidate.last_name
+       %td= candidate.agenda
+       %td= candidate.achievements
